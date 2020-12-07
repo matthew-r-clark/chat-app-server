@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://mclark-chat-app-server.herokuapp.com/",
+    origin: "https://mclark-chat-app.netlify.app/",
     methods: ["GET", "POST"]
   }
 });
