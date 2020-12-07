@@ -5,13 +5,12 @@ const port = process.env.PORT || 4001;
 const app = express();
 const server = http.createServer(app);
 
-const io = socketIo(server);
-// const io = socketIo(server, {
-//   cors: {
-//     origin: "",
-//     methods: ["GET", "POST"]
-//   }
-// });
+const io = socketIo(server, {
+  cors: {
+    origin: "https://mclark-chat-app-server.herokuapp.com/",
+    methods: ["GET", "POST"]
+  }
+});
 
 
 app.get("/", (req, res) => {
