@@ -44,8 +44,6 @@ function getUserByUsername(username) {
 }
 
 io.on('connection', socket => {
-  io.to(socket.id).emit('request username');
-
   socket.on('join chat', data => {
     if (!data || !data.username) {
       socket.emit('invalid name', 'Please enter a valid username (must be at least one character):');
